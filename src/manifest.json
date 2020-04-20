@@ -4,7 +4,7 @@
   "name": "Airtable Data Extractor",
   "short_name": "Airtable Data Extractor",
   "description": "Allows you to extract raw data (JSON or CSV) from an Airtable shared view.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "browser_action": {},
   "icons": {
     "34": "icon-34.png",
