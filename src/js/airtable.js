@@ -51,8 +51,11 @@ function generateDownload(json, type) {
 
   let csvColumns = [];
 
-  const result = json.rows.map((row) => {
+  let result = json.rows.map((row) => {
     const rowData = {};
+
+    if (!row.cellValuesByColumnId)
+      return undefined;
 
     for (let [key, value] of Object.entries(row.cellValuesByColumnId)) {
       const column = columns[key];
@@ -88,6 +91,8 @@ function generateDownload(json, type) {
 
     return rowData;
   });
+
+  result = result.filter(entry => entry !== undefined);
 
   let blob;
   let filename;
